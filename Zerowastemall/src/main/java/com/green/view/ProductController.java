@@ -49,8 +49,14 @@ public class ProductController {
 
    
    @RequestMapping(value="/shop-grid", method=RequestMethod.GET)
-   public String home() {   // TODO: Model 持绢具 凳.
+   public String shopmain() {   // TODO: Model 持绢具 凳.
       
       return "shop-grid";
+   }
+   
+   @RequestMapping(value="/shop-details", method=RequestMethod.GET)
+   public String shopdetail() {   // TODO: Model 持绢具 凳.
+      
+      return "shop-details";
    }
 }
