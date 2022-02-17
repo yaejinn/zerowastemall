@@ -35,9 +35,12 @@
                             <a href="index"><img src="img/logo.png" alt=""></a>
                         </div>
                         <ul>
-                            <li>Address: 60-49 Road 11378 New York</li>
-                            <li>Phone: +65 11.188.888</li>
-                            <li>Email: hello@colorlib.com</li>
+                            <li>법인명(상호): 주식회사 save earth | 사업자등록번호: 261-81-23576</li>
+                            <li>통신판매업: 제 2020-서울강남-01645호 | 개인정보보호책임자: 장예진</li>
+                            <li>주소: 서울특별시 강남구 강남대로 428 만이빌딩 5, 10층(역삼동) | 대표이사: 손수련</li>
+                            <li>고객센터: +82-1688-1234 </li>
+                            <li>이메일: saveearth@email.com | 팩스: 070-7500-6091</li>
+                            
                         </ul>
                     </div>
                 </div>
@@ -83,7 +86,7 @@
                 <div class="col-lg-12">
                     <div class="footer__copyright">
                         <div class="footer__copyright__text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                          Copyright ©2020 All Rights Reserved.
   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
                         <div class="footer__copyright__payment"><img src="img/payment-item.png" alt=""></div>
                     </div>

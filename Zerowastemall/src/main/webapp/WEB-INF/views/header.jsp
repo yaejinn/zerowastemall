@@ -32,8 +32,8 @@
                     <div class="col-lg-6">
                         <div class="header__top__left">
                             <ul>
-                                <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
-                                <li>Free Shipping for all Order of $99</li>
+                                <li><i class="fa fa-envelope"></i> saveearth@email.com</li>
+                                <li>오후2시까지 주문할시에 당일출고</li>
                             </ul>
                         </div>
                     </div>
@@ -46,11 +46,11 @@
                                 <a href="#"><i class="fa fa-pinterest-p"></i></a>
                             </div>
                             <div class="header__top__right__language">
-                                <img src="img/language.png" alt="">
-                                <div>English</div>
+                               
+                                <div>한국어</div>
                                 <span class="arrow_carrot-down"></span>
                                 <ul>
-                                    <li><a href="#">Spanis</a></li>
+                                    <li><a href="#">한국어</a></li>
                                     <li><a href="#">English</a></li>
                                 </ul>
                             </div>
@@ -66,7 +66,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="index"><img src="img/logo.png" alt=""></a>
+                        <a href="index"><img src="img/logo.JPG" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6">
