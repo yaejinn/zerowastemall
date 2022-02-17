@@ -10,10 +10,9 @@
 
     <!-- Font Icon -->
     <link rel="stylesheet" href="member/fonts/material-icon/css/material-design-iconic-font.min.css">
-
     <!-- Main css -->
     <link rel="stylesheet" href="member/css/style.css">
-<title>Insert title here</title>
+
 </head>
 <body>
  <div class="main">
@@ -40,6 +39,14 @@
                             <div class="form-group">
                                 <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
                                 <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="address"><i class="zmdi zmdi-home"></i></label>
+                                <input type="address" name="address" id="address" placeholder="Your address"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone"><i class="zmdi zmdi-phone"></i></label>
+                                <input type="phone" name="phone" id="phone" placeholder="PhoneNumber"/>
                             </div>
                             <div class="form-group">
                                 <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />

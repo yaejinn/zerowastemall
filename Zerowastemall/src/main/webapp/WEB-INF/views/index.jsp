@@ -9,7 +9,7 @@
     <meta name="keywords" content="Ogani, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ogani | Template</title>
+
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
 
-<title>Insert title here</title>
+	<title>SaveEarth::메인페이지</title>
 </head>
 <body>
  <!-- Page Preloder -->
@@ -136,14 +136,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="hero__item set-bg" data-setbg="img/hero/banner.jpg">
-                        <div class="hero__text">
-                            <span>FRUIT FRESH</span>
-                            <h2>Vegetable <br />100% Organic</h2>
-                            <p>Free Pickup and Delivery Available</p>
-                            <a href="#" class="primary-btn">SHOP NOW</a>
-                        </div>
-                    </div>
+                    <div class="hero__item set-bg" data-setbg="img/hero/banner.jpg"></div>
                 </div>
             </div>
         </div>
