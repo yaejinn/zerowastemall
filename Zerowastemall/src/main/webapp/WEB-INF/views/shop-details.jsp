@@ -27,12 +27,12 @@
 </head>
 <body>
 <!-- Page Preloder -->
-    <div id="preloder">
+<!--  <div id="preloder">
         <div class="loader"></div>
-    </div>
+    </div>-->    
 
     <!-- Humberger Begin -->
-    <div class="humberger__menu__overlay"></div>
+<!--    <div class="humberger__menu__overlay"></div>
     <div class="humberger__menu__wrapper">
         <div class="humberger__menu__logo">
             <a href="#"><img src="img/logo.png" alt=""></a>
@@ -87,7 +87,7 @@
                 <li>Free Shipping for all Order of $99</li>
             </ul>
         </div>
-    </div>
+    </div>-->
     <!-- Humberger End -->
 
     
@@ -103,11 +103,11 @@
                         </div>
                         <ul>
                             <li><a href="#">All</a></li>
-                            <li><a href="#">LIVING</a></li>
-                            <li><a href="#">KITCHEN</a></li>
-                            <li><a href="#">BATHROOM</a></li>
-                            <li><a href="#">KIT</a></li>
-                            <li><a href="#">ETC</a></li>
+                            <li><a href="category?kind=1">LIVING</a></li>
+                            <li><a href="category?kind=2">KITCHEN</a></li>
+                            <li><a href="category?kind=3">BATHROOM</a></li>
+                            <li><a href="category?kind=4">KIT</a></li>
+                            <li><a href="category?kind=5">ETC</a></li>
                         </ul>
                     </div>
                 </div>
@@ -128,8 +128,8 @@
                                 <i class="fa fa-phone"></i>
                             </div>
                             <div class="hero__search__phone__text">
-                                <h5>+65 11.188.888</h5>
-                                <span>support 24/7 time</span>
+                                <h5>+82 1688.1234</h5>
+                                <span>평일 오전9시-오후6시 </span>
                             </div>
                         </div>
                     </div>
@@ -148,7 +148,7 @@
                         <h2>Vegetable’s Package</h2>
                         <div class="breadcrumb__option">
                             <a href="index">Home</a>
-                            <a href="index">Vegetables</a>
+                            <a href="shop-grid">Shop</a>
                             <span>Vegetable’s Package</span>
                         </div>
                     </div>
@@ -166,7 +166,7 @@
                     <div class="product__details__pic">
                         <div class="product__details__pic__item">
                             <img class="product__details__pic__item--large"
-                                src="img/product/details/product-details-1.jpg" alt="">
+                                src="product_images/${productVO.image}" alt="">
                         </div>
                         <div class="product__details__pic__slider owl-carousel">
                             <img data-imgbigurl="img/product/details/product-details-2.jpg"
@@ -182,7 +182,7 @@
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <div class="product__details__text">
-                        <h3>Vetgetable’s Package</h3>
+                        <h3>${productVO.name}</h3>
                         <div class="product__details__rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -192,9 +192,9 @@
                             <span>(18 reviews)</span>
                         </div>
                         <div class="product__details__price">$50.00</div>
-                        <p>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam
-                            vehicula elementum sed sit amet dui. Sed porttitor lectus nibh. Vestibulum ac diam sit amet
-                            quam vehicula elementum sed sit amet dui. Proin eget tortor risus.</p>
+                         
+                   
+                        
                         <div class="product__details__quantity">
                             <div class="quantity">
                                 <div class="pro-qty">
@@ -202,7 +202,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#" class="primary-btn">ADD TO CARD</a>
+                        <a href="shoping-cart" class="primary-btn">ADD TO CART</a>
                         <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
                         <ul>
                             <li><b>Availability</b> <span>In Stock</span></li>

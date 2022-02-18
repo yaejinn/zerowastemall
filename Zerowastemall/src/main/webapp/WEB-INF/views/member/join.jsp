@@ -23,11 +23,18 @@
                 <div class="signup-content">
                     <div class="signup-form">
                         <h2 class="form-title">Sign up</h2>
-                        <form method="POST" class="join" id="register-form">
+                        <form method="POST" class="join" id="join" name="formm" action="join">
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="name" id="name" placeholder="Your Name"/>
                             </div>
+                            <div class="form-group">
+                                <label for="id"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="id" id="id" placeholder="Your ID" size="15"/>
+                        		<input type="hidden"    name="reid" id="reid" value="${reid}">
+        			    		<a href="id_check_form" onclick = "window.open(this.href,'_blank','width=400,height=200'); return false;">중복체크</a>
+                            </div>
+                        
                             <div class="form-group">
                                 <label for="email"><i class="zmdi zmdi-email"></i></label>
                                 <input type="email" name="email" id="email" placeholder="Your Email"/>
@@ -42,15 +49,15 @@
                             </div>
                             <div class="form-group">
                                 <label for="address"><i class="zmdi zmdi-home"></i></label>
-                                <input type="address" name="address" id="address" placeholder="Your address"/>
+                                <input type="text" name="address" id="address" placeholder="Your address"/>
                             </div>
                             <div class="form-group">
                                 <label for="phone"><i class="zmdi zmdi-phone"></i></label>
-                                <input type="phone" name="phone" id="phone" placeholder="PhoneNumber"/>
+                                <input type="text" name="phone" id="phone" placeholder="PhoneNumber"/>
                             </div>
                             <div class="form-group">
                                 <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
-                                <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                                <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="contract" class="term-service" onclick = "window.open(this.href,'_blank','width=750,height=550'); return false;">Terms of service</a></label>
                             </div>
                             <div class="form-group form-button">
                                 <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>

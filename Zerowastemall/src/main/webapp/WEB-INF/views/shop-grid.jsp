@@ -9,7 +9,7 @@
     <meta name="keywords" content="Ogani, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ogani | Template</title>
+    <title>SaveEarth::샵메인페이지</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
@@ -23,16 +23,16 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-<title>Insert title here</title>
+
 </head>
 <body>
   <!-- Page Preloder -->
-    <div id="preloder">
+<!--    <div id="preloder">
         <div class="loader"></div>
     </div>
-
+-->
     <!-- Humberger Begin -->
-    <div class="humberger__menu__overlay"></div>
+<!--    <div class="humberger__menu__overlay"></div>
     <div class="humberger__menu__wrapper">
         <div class="humberger__menu__logo">
             <a href="#"><img src="img/logo.png" alt=""></a>
@@ -87,7 +87,7 @@
                 <li>Free Shipping for all Order of $99</li>
             </ul>
         </div>
-    </div>
+    </div>-->
     <!-- Humberger End -->
 
     
@@ -146,9 +146,9 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
-                        <h2>Organi Shop</h2>
+                        <h2>Save Earth</h2>
                         <div class="breadcrumb__option">
-                            <a href="./index.html">Home</a>
+                            <a href="index">Home</a>
                             <span>Shop</span>
                         </div>
                     </div>
@@ -325,6 +325,8 @@
                         </div>
                     </div>
                 </div>
+                
+                
                 <div class="col-lg-9 col-md-7">
                     <div class="product__discount">
                         <div class="section-title product__discount__title">
@@ -449,8 +451,9 @@
                                 <div class="filter__sort">
                                     <span>Sort By</span>
                                     <select>
-                                        <option value="0">Default</option>
-                                        <option value="0">Default</option>
+                                    	<option value="0">추천순</option>
+                                        <option value="1">낮은 가격순</option>
+                                        <option value="2">높은 가격순</option>
                                     </select>
                                 </div>
                             </div>
@@ -466,20 +469,27 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
+                    </div> 
+                	 <article>
+					    <h2> Item</h2>     
+					    <c:forEach items="${productKindList}"  var="productVO">
+					      <div id="item">
+					        <a href="product_detail?pseq=${productVO.pseq}"> 
+					          <img src="product_images/${productVO.image}" />
+					          <h3>${productVO.name} </h3>        
+					          <p>${productVO.price2} </p>
+					        </a>  
+					      </div>
+					    </c:forEach>    
+					    <div class="clear"></div>
+					  </article>
+                    <!--<div class="row">
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item">
                                 <div class="product__item__pic set-bg" data-setbg="img/product/product-1.jpg">
                                     <ul class="product__item__pic__hover">
-                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                        <li><a href="shop-details"><i class="fa fa-shopping-cart"></i></a></li>
                                     </ul>
-                                </div>
-                                <div class="product__item__text">
-                                    <h6><a href="#">Crab Pool Security</a></h6>
-                                    <h5>$30.00</h5>
                                 </div>
                             </div>
                         </div>
@@ -487,13 +497,11 @@
                             <div class="product__item">
                                 <div class="product__item__pic set-bg" data-setbg="img/product/product-2.jpg">
                                     <ul class="product__item__pic__hover">
-                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-retweet"></i></a></li>
                                         <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
-                                    <h6><a href="#">Crab Pool Security</a></h6>
+                                    <h6><a href="shop-details">Crab Pool Security</a></h6>
                                     <h5>$30.00</h5>
                                 </div>
                             </div>
@@ -647,7 +655,7 @@
                                     <h5>$30.00</h5>
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
                     </div>
                     <div class="product__pagination">
                         <a href="#">1</a>

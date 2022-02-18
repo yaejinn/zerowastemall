@@ -121,24 +121,24 @@ public class MemberController {
 	/*
 	 * 회원가입 처리
 	 */
-	@PostMapping(value="/join")
-	public String joinAction(@RequestParam(value="addr1")String addr1,
-							 @RequestParam(value="addr2")String addr2,	
-							 MemberVO vo) {
-		vo.setAddress(addr1+" "+addr2);
-		memberService.insertMember(vo);
-		
-		return "member/login";
-	}
+//	@PostMapping(value="/join")
+//	public String joinAction(@RequestParam(value="addr1")String addr1,
+//							 @RequestParam(value="addr2")String addr2,	
+//							 MemberVO vo) {
+//		vo.setAddress(addr1+" "+addr2);
+//		memberService.insertMember(vo);
+//		
+//		return "member/login";
+//	}
 	
 	/*
 	 * 우편번호, 주소 찾기 화면 출력
 	 */
-	@GetMapping(value="/find_zip_num")
-	public String findZipNumView() {
-		
-		return "member/findZipNum";
-	}
+//	@GetMapping(value="/find_zip_num")
+//	public String findZipNumView() {
+//		
+//		return "member/findZipNum";
+//	}
 	
 //	/*
 //	 * 동이름으로 주소 찾기

@@ -307,7 +307,7 @@ figure {
   margin-right: 75px;
   padding-left: 34px; }
 
-.register-form {
+.join {
   width: 100%; }
 
 .form-group {
@@ -564,6 +564,9 @@ label.valid {
 
   .form-button {
     text-align: center; }
+    
+  .form-button1 {
+    margin: 20px 0 0 0; }
 
   .signin-form {
     order: 1;

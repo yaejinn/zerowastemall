@@ -74,13 +74,15 @@
                         <ul>
                             <li><a href="index">HOME</a></li>
                             <li class="active"><a href="shop-grid">Shop</a></li>
-                            <li><a href="#">MYPAGE</a>
+                            <li><a href="mypage/mypage">MYPAGE</a>
+                                
+                            </li>
+                            <li><a href="NOTICE">NOTICE</a>
                                 <ul class="header__menu__dropdown">
                                     <li><a href="LOGIN">LOGIN</a></li>
                                     
                                 </ul>
                             </li>
-                            <li><a href="NOTICE">NOTICE</a></li>
                             <li><a href="Q&A">Q&amp;A(1:1)</a></li>
                         </ul>
                     </nav>
