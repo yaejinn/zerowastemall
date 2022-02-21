@@ -23,7 +23,7 @@ public class NoticeServiceImpl implements NoticeService {
 		return noticeDao.getNotice(nseq);
 	}
 
-	// ** Admin°ü¸®ÀÚ ÆäÀÌÁö ÀÛ¼º½Ã Ãß°¡ ºÎºĞ
+	// ** Adminê´€ë¦¬ì í˜ì´ì§€ ì‘ì„±ì‹œ ì¶”ê°€ ë¶€ë¶„
 	@Override
 	public void insertNotice(NoticeVO vo) {
 		noticeDao.insertNotice(vo);

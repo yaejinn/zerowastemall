@@ -48,17 +48,12 @@
                             <span>All departments</span>
                         </div>
                         <ul>
-                            <li><a href="#">Fresh Meat</a></li>
-                            <li><a href="#">Vegetables</a></li>
-                            <li><a href="#">Fruit & Nut Gifts</a></li>
-                            <li><a href="#">Fresh Berries</a></li>
-                            <li><a href="#">Ocean Foods</a></li>
-                            <li><a href="#">Butter & Eggs</a></li>
-                            <li><a href="#">Fastfood</a></li>
-                            <li><a href="#">Fresh Onion</a></li>
-                            <li><a href="#">Papayaya & Crisps</a></li>
-                            <li><a href="#">Oatmeal</a></li>
-                            <li><a href="#">Fresh Bananas</a></li>
+                            <li><a href="#">All</a></li>
+                            <li><a href="category?kind=1">LIVING</a></li>
+                            <li><a href="category?kind=2">KITCHEN</a></li>
+                            <li><a href="category?kind=3">BATHROOM</a></li>
+                            <li><a href="category?kind=4">KIT</a></li>
+                            <li><a href="category?kind=5">ETC</a></li>
                         </ul>
                     </div>
                 </div>
@@ -79,8 +74,8 @@
                                 <i class="fa fa-phone"></i>
                             </div>
                             <div class="hero__search__phone__text">
-                                <h5>+65 11.188.888</h5>
-                                <span>support 24/7 time</span>
+                                <h5>+82 1688.1234</h5>
+                                <span>평일 오전9시-오후6시 </span>
                             </div>
                         </div>
                     </div>
@@ -190,32 +185,31 @@
 				  <tbody>
 				  
 				  <tr>
-				      <th scope="row">1</th>
-				      <td>Mark</td>
-				      <td>Otto</td>
-				      <td>@mdo</td>
+				      <th scope="row"><a href="qna_view">1</a></th>
+				      <td>환불문의</td>
+				      <td>yes</td>
+				      <td>2021-12-01</td>
 				    </tr>
     
-				  <!-- 나중에 Controller수정시 위에꺼 tr묶음 삭제하고 열기, 
+				 <!--나중에 Controller수정시 위에꺼 tr묶음 삭제하고 열기, 
 				  	    밑에꺼 열어야 qnaView.jsp 볼수있음.. 
 				  <c:forEach items="${qnaList}"  var="qnaVO">
 				    <tr>
 				      <th scope="row">1</th>
 						<td> ${qnaVO.qseq} </td>    
-				        <td> <a href="qna_view?qseq=${qnaVO.qseq}"> ${qnaVO.subject} </td>      
-				        <td> <fmt:formatDate value="${qnaVO.indate}" type="date"/></td>
+				        <td> <a href="qna_view?qseq=${qnaVO.qseq}"> ${qnaVO.subject} </td>  
 				        <td>
-				        <td>
-				        <c:choose>
-				        	<c:when test="${qnaVO.rep==1}"> no </c:when>
-				            <c:when test="${qnaVO.rep==2}"> yes </c:when>
+				        	<c:choose>
+					        	<c:when test="${qnaVO.rep==1}"> no </c:when>
+					            <c:when test="${qnaVO.rep==2}"> yes </c:when>
 				            </c:choose>
-				       </td>    
+				        </td>      
+				        <td><fmt:formatDate value="${qnaVO.indate}" type="date"/></td>
 				    </tr>
-				   </c:forEach>  -->
-				 </tbody>
-				
-				 
+				   </c:forEach>  
+				   -->
+				   
+				 </tbody>		 
 				</table>
 				<br><br><br>
         

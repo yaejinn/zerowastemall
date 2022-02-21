@@ -5,34 +5,35 @@ import java.util.List;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
 import com.green.biz.dto.CartVO;
 
 @Repository
-public class CartDAO {
-	
+public class CartDAO  {
+
 	@Autowired
 	private SqlSessionTemplate mybatis;
 	
-	//Àå¹Ù±¸´Ï ´ã±â
+	// ì¥ë°”êµ¬ë‹ˆ ë‹´ê¸°
 	public void insertCart(CartVO vo) {
 		
-		mybatis.insert("mappings.cart-mapping.insertCart",vo);
-	}
-	//Àå¹Ù±¸´Ï ¸ñ·Ï
-	public List<CartVO> listCart(String userid){
-		
-		return mybatis.selectList("mappings.cart-mapping.listCart",userid);
-	}
-	//Àå¹Ù±¸´Ï¿¡¼­ Ç×¸ñ »èÁ¦
-	public void deleteCart(int cseq) {
-		
-		mybatis.delete("mappings.cart-mapping.deleteCart",cseq);
+		mybatis.insert("mappings.cart-mapping.insertCart", vo);
 	}
 	
-	//Àå¹Ù±¸´Ï Ç×¸ñÀ» 'Ã³¸®'·Î ¾÷µ¥ÀÌÆ®
+	// ì¥ë°”êµ¬ë‹ˆ ëª©ë¡
+	public List<CartVO> listCart(String userid) {
+		
+		return mybatis.selectList("mappings.cart-mapping.listCart", userid);
+	}
+	
+	// ì¥ë°”êµ¬ë‹ˆì—ì„œ í•­ëª© ì‚­ì œ
+	public void deleteCart(int cseq) {
+		
+		mybatis.delete("mappings.cart-mapping.deleteCart", cseq);
+	}
+	
+	// ì¥ë°”êµ¬ë‹ˆ í•­ëª©ì„ 'ì²˜ë¦¬'ë¡œ ì—…ë°ì´íŠ¸
 	public void updateCart(int cseq) {
 		
-		mybatis.update("mappings.cart-mapping.updateCart",cseq);
+		mybatis.update("mappings.cart-mapping.updateCart", cseq);
 	}
 }

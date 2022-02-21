@@ -11,7 +11,7 @@ public interface QnaService {
 
 	void insertQna(QnaVO vo);
 	
-	// ¢º¢º Admin°ü¸®ÀÚ ÆäÀÌÁö ÀÛ¼º½Ã Ãß°¡ ºÎºĞ 
+	// â–¶â–¶ Adminê´€ë¦¬ì í˜ì´ì§€ ì‘ì„±ì‹œ ì¶”ê°€ ë¶€ë¶„ 
 	public List<QnaVO> listAllQna();
 	
 	public void updateQna(QnaVO vo);

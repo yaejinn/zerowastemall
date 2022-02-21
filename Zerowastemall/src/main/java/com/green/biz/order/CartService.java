@@ -6,15 +6,16 @@ import com.green.biz.dto.CartVO;
 
 public interface CartService {
 
-	//Àå¹Ù±¸´Ï ´ã±â
+	// ì¥ë°”êµ¬ë‹ˆ ë‹´ê¸°
 	void insertCart(CartVO vo);
 
-	//Àå¹Ù±¸´Ï ¸ñ·Ï
+	// ì¥ë°”êµ¬ë‹ˆ ëª©ë¡
 	List<CartVO> listCart(String userid);
 
-	//Àå¹Ù±¸´Ï¿¡¼­ Ç×¸ñ »èÁ¦
+	// ì¥ë°”êµ¬ë‹ˆì—ì„œ í•­ëª© ì‚­ì œ
 	void deleteCart(int cseq);
-	
-	void updateCart(int cseq);
 
+	// ì¥ë°”êµ¬ë‹ˆ ì—…ë°ì´íŠ¸
+	void updateCart(int cseq);
 }
+

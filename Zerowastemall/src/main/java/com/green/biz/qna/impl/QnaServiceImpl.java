@@ -30,7 +30,7 @@ public class QnaServiceImpl implements QnaService {
 		qnaDao.insertQna(vo);
 	}
 
-	// ¢º¢º Admin°ü¸®ÀÚ ÆäÀÌÁö ÀÛ¼º½Ã Ãß°¡ ºÎºĞ 
+	// â–¶â–¶ Adminê´€ë¦¬ì í˜ì´ì§€ ì‘ì„±ì‹œ ì¶”ê°€ ë¶€ë¶„ 
 	@Override
 	public List<QnaVO> listAllQna() {
 		return qnaDao.listAllQna();

@@ -18,14 +18,14 @@ public class QnaController {
 	QnaService qnaService;
 	
 	/*
-	 * È¸¿øid¸¦ Á¶°ÇÀ¸·Î ¸ğµç Q&A Á¶È¸
+	 * íšŒì›idë¥¼ ì¡°ê±´ìœ¼ë¡œ ëª¨ë“  Q&A ì¡°íšŒ
 	 */
 	
 	/*
 	@GetMapping(value="/qna_list")
 	public String qnaList(HttpSession session, Model model) {
 		
-		// È¸¿ø ·Î±×ÀÎ È®ÀÎ
+		// íšŒì› ë¡œê·¸ì¸ í™•ì¸
 		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
 		
 		if(loginUser == null) {
@@ -33,14 +33,14 @@ public class QnaController {
 		} else { 
 			List<QnaVO> qnaList = qnaService.listQna(loginUser.getId());
 			
-			model.addAttribute("qnaList", qnaList); // qnaList.jspÀÇ ${qnaList}
+			model.addAttribute("qnaList", qnaList); // qnaList.jspì˜ ${qnaList}
 			
 			return "qna/qnaList"; // jsp
 			
 		}
 	}
 	*/
-	// Q&A ¸®½ºÆ® ºÒ·¯¿À±â
+	// Q&A ë¦¬ìŠ¤íŠ¸ ë¶ˆëŸ¬ì˜¤ê¸°
 	@GetMapping(value="/qna_list")
 	public String qnaList() {
 		return "qna/qnaList"; // jsp
@@ -48,7 +48,7 @@ public class QnaController {
 	
 	
 	/*
-	 * Q&A Æû ºÒ·¯¿À±â
+	 * Q&A í¼ ë¶ˆëŸ¬ì˜¤ê¸°
 	 */
 	/*
 	@GetMapping(value="/qna_write_form")
@@ -62,14 +62,14 @@ public class QnaController {
 		}
 	}
 	*/
-	//  Q&A Æû ºÒ·¯¿À±â
+	//  Q&A í¼ ë¶ˆëŸ¬ì˜¤ê¸°
 	@GetMapping(value="/qna_write_form")
 	public String qnaWriteView() {
 		return "qna/qnaWrite"; // jsp
 	}
 	
 	/*
-	 * Q&A Æû-> ÀÛ¼º¿Ï·á (¹öÆ°:±Ûµî·Ï Å¬¸¯½Ã // ³»¿ëÀúÀå ¹× Q&A¸®½ºÆ®·Î ÀÌµ¿)
+	 * Q&A í¼-> ì‘ì„±ì™„ë£Œ (ë²„íŠ¼:ê¸€ë“±ë¡ í´ë¦­ì‹œ // ë‚´ìš©ì €ì¥ ë° Q&Aë¦¬ìŠ¤íŠ¸ë¡œ ì´ë™)
 	 */
 	/*
 	@PostMapping(value="/qna_write")
@@ -79,27 +79,27 @@ public class QnaController {
 		if (loginUser == null) {
 			return "member/login"; // jsp
 		
-		// »ç¿ëÀÚid Á¤º¸¸¦ QnaVO °´Ã¼¿¡ ÀúÀå	
-		// qnaService °´Ã¼¿¡¼­ insertQna(qnaVO, id)¸¦ È£ÃâÇÏ¿© °Ô½Ã±ÛÀ» ÀúÀå
+		// ì‚¬ìš©ìid ì •ë³´ë¥¼ QnaVO ê°ì²´ì— ì €ì¥	
+		// qnaService ê°ì²´ì—ì„œ insertQna(qnaVO, id)ë¥¼ í˜¸ì¶œí•˜ì—¬ ê²Œì‹œê¸€ì„ ì €ì¥
 		} else {
 			vo.setId(loginUser.getId());	
 			qnaService.insertQna(vo);
 			
-			return "redirect:qna_list"; // °Ô½Ã±Û ¸ñ·ÏÈ­¸é(/qna_list) ÀÌµ¿
+			return "redirect:qna_list"; // ê²Œì‹œê¸€ ëª©ë¡í™”ë©´(/qna_list) ì´ë™
 		}
 	}
 	*/
-	// Q&A Æû-> ÀÛ¼º¿Ï·á (¹öÆ°:±Ûµî·Ï Å¬¸¯½Ã // ³»¿ëÀúÀå ¹× Q&A¸®½ºÆ®·Î ÀÌµ¿)
+	// Q&A í¼-> ì‘ì„±ì™„ë£Œ (ë²„íŠ¼:ê¸€ë“±ë¡ í´ë¦­ì‹œ // ë‚´ìš©ì €ì¥ ë° Q&Aë¦¬ìŠ¤íŠ¸ë¡œ ì´ë™)
 	@PostMapping(value="/qna_write")
 	public String qnaWrite() {
-		return "redirect:qna_list"; // °Ô½Ã±Û ¸ñ·ÏÈ­¸é(/qna_list) ÀÌµ¿
+		return "redirect:qna_list"; // ê²Œì‹œê¸€ ëª©ë¡í™”ë©´(/qna_list) ì´ë™
 	}
 	
 	
 	/*
-	 * Q&A View °Ô½Ã±Û »ó¼¼º¸±â	
-	 * qnaList.jspÀÇ qna_view?qseq=
-	 * qseq¸¦ QnaVO °´Ã¼·Î ¹ŞÀ½
+	 * Q&A View ê²Œì‹œê¸€ ìƒì„¸ë³´ê¸°	
+	 * qnaList.jspì˜ qna_view?qseq=
+	 * qseqë¥¼ QnaVO ê°ì²´ë¡œ ë°›ìŒ
 	 */
 	/*
 	@GetMapping(value="/qna_view")
@@ -118,11 +118,12 @@ public class QnaController {
 		}	
 	}
 	*/
-	// 	 * Q&A View °Ô½Ã±Û »ó¼¼º¸±â
-	//   * qnaList.jspÀÇ qna_view?qseq=
+	// 	 * Q&A View ê²Œì‹œê¸€ ìƒì„¸ë³´ê¸°
+	//   * qnaList.jspì˜ qna_view?qseq=
 	@GetMapping(value="/qna_view")
 	public String qnaView() {
 		return "qna/qnaView"; // jsp
 	}
 	
 }
+
