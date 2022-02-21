@@ -5,14 +5,14 @@ import com.green.biz.dto.NoticeVO;
 
 public interface NoticeService{
 
-	// Á¶°Ç¾øÀÌ ¸ðµç NoticeÁ¶È¸
+	// ì¡°ê±´ì—†ì´ ëª¨ë“  Noticeì¡°íšŒ
 	List<NoticeVO> listNotice();
 
-	// °øÁö»çÇ× ±Û ¹øÈ£·Î ³»¿ë Á¶È¸
+	// ê³µì§€ì‚¬í•­ ê¸€ ë²ˆí˜¸ë¡œ ë‚´ìš© ì¡°íšŒ
 	NoticeVO getNotice(int nseq);
 
-	// ¢º¢º Admin°ü¸®ÀÚ ÆäÀÌÁö ÀÛ¼º½Ã Ãß°¡ ºÎºÐ  ¹Ì¸®ÀÛ¼º
-	// Notice³»¿ë »ðÀÔ
+	// â–¶â–¶ Adminê´€ë¦¬ìž íŽ˜ì´ì§€ ìž‘ì„±ì‹œ ì¶”ê°€ ë¶€ë¶„  ë¯¸ë¦¬ìž‘ì„±
+	// Noticeë‚´ìš© ì‚½ìž…
 	void insertNotice(NoticeVO vo);
 
 }

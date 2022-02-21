@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="header.jsp" %>  
+<%@ include file="header.jsp" %> 
+<%-- -- 나중에 Controller수정시 열기 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
+--%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +13,7 @@
     <meta name="keywords" content="Ogani, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ogani | Template</title>
+    <title>장바구니 화면</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
@@ -23,7 +27,7 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-<title>Insert title here</title>
+
 </head>
 <body>
 <!-- Page Preloder -->
@@ -101,17 +105,12 @@
                             <span>All departments</span>
                         </div>
                         <ul>
-                            <li><a href="#">Fresh Meat</a></li>
-                            <li><a href="#">Vegetables</a></li>
-                            <li><a href="#">Fruit & Nut Gifts</a></li>
-                            <li><a href="#">Fresh Berries</a></li>
-                            <li><a href="#">Ocean Foods</a></li>
-                            <li><a href="#">Butter & Eggs</a></li>
-                            <li><a href="#">Fastfood</a></li>
-                            <li><a href="#">Fresh Onion</a></li>
-                            <li><a href="#">Papayaya & Crisps</a></li>
-                            <li><a href="#">Oatmeal</a></li>
-                            <li><a href="#">Fresh Bananas</a></li>
+                            <li><a href="#">All</a></li>
+                            <li><a href="category?kind=1">LIVING</a></li>
+                            <li><a href="category?kind=2">KITCHEN</a></li>
+                            <li><a href="category?kind=3">BATHROOM</a></li>
+                            <li><a href="category?kind=4">KIT</a></li>
+                            <li><a href="category?kind=5">ETC</a></li>
                         </ul>
                     </div>
                 </div>
@@ -132,8 +131,8 @@
                                 <i class="fa fa-phone"></i>
                             </div>
                             <div class="hero__search__phone__text">
-                                <h5>+65 11.188.888</h5>
-                                <span>support 24/7 time</span>
+                                <h5>+82 1688.1234</h5>
+                                <span>평일 오전9시-오후6시 </span>
                             </div>
                         </div>
                     </div>
@@ -149,7 +148,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
-                        <h2>Shopping Cart</h2>
+                        <h2>Shopping Cart | 장바구니</h2>
                         <div class="breadcrumb__option">
                             <a href="index">Home</a>
                             <span>Shopping Cart</span>
@@ -170,13 +169,14 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th class="shoping__product">Products</th>
-                                    <th>Price</th>
-                                    <th>Quantity</th>
-                                    <th>Total</th>
+                                    <th class="shoping__product">Products<br>상품</th>
+                                    <th>Price<br>금액</th>
+                                    <th>Quantity<br>수량</th>
+                                    <th>Total<br>총 금액</th>
                                     <th></th>
                                 </tr>
                             </thead>
+                                                      
                             <tbody>
                                 <tr>
                                     <td class="shoping__cart__item">
@@ -197,7 +197,8 @@
                                         $110.00
                                     </td>
                                     <td class="shoping__cart__item__close">
-                                        <span class="icon_close"></span>
+                                        <!--<span class="icon_close"></span>-->
+                                        <input type="checkbox" name="cseq" value= "${cartVO.cseq}">
                                     </td>
                                 </tr>
                                 <tr>
@@ -219,7 +220,8 @@
                                         $39.99
                                     </td>
                                     <td class="shoping__cart__item__close">
-                                        <span class="icon_close"></span>
+                                        <!--<span class="icon_close"></span>-->
+                                        <input type="checkbox" name="cseq" value= "${cartVO.cseq}">
                                     </td>
                                 </tr>
                                 <tr>
@@ -241,41 +243,108 @@
                                         $69.99
                                     </td>
                                     <td class="shoping__cart__item__close">
-                                        <span class="icon_close"></span>
+                                        <!--<span class="icon_close"></span>-->
+                                        <input type="checkbox" name="cseq" value= "${cartVO.cseq}">
                                     </td>
                                 </tr>
+                                
+                                  
+                        <!-- C코드로 수정 시작 -->
+                        <!-- controller 구현 완료 후 위의 tr/td항목 모두 삭제 -->
+                        <!--
+                        <form name="formm" id="theform" method="post">
+                        <c:choose>
+                        <c:when test= "${cartList.size() == 0}">
+					      <h3 style="color: red;text-align: center;"> 장바구니가 비었습니다. </h3> 
+					    </c:when> 
+                        <c:otherwise>
+	                        <table>
+	                            <thead>
+	                                <tr>
+	                                    <th class="shoping__product">Products<br>상품</th>
+	                                    <th>Price<br>금액</th>
+	                                    <th>Quantity<br>수량</th>
+	                                    <th>Total<br>총 금액</th>
+	                                    <th></th>
+	                                </tr>
+	                            </thead>                             
+	
+	                             <tbody>
+	                             <c:forEach items="${cartList}"  var="cartVO">                             
+	                                <tr>
+	                                    <td class="shoping__cart__item">
+	                                    	<a href="product_detail?pseq=${cartVO.pseq}">
+	                                        	<img src="img/cart/cart-1.jpg" alt=""> 
+	                                         </a>
+	                                        <h5>${cartVO.pname}</h5>                                        	
+	                                    </td>
+	                                    <td class="shoping__cart__price">
+	                                        <fmt:formatNumber value="${cartVO.price2*cartVO.quantity}" type="currency"/> 
+	                                    </td>
+	                                    <td class="shoping__cart__quantity">
+	                                        <div class="quantity">
+	                                            <div class="pro-qty">
+	                                                <input type="text" value="${cartVO.quantity}">
+	                                            </div>
+	                                        </div>
+	                                    </td>
+	                                  </tr> 
+	                                </c:forEach>    
+		                              <tr> 
+		                                  <td class="shoping__cart__total">
+		                                      <fmt:formatNumber value="${totalPrice}" type="currency"/>
+		                                  </td>
+	                                    <td class="shoping__cart__item__close">	                                       
+	                                        <input type="checkbox" name="cseq" value= "${cartVO.cseq}">
+	                                    </td>
+		                              </tr>
+	                             </tbody>
+	                        </table>
+                        </c:otherwise>	                        
+                        </c:choose>
+                        </form> -->                             
+                        <!-- C코드 수정 끝 -->
+                                
+                                
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
+            
+            <!-- 버튼 -->
             <div class="row">
                 <div class="col-lg-12">
                     <div class="shoping__cart__btns">
-                        <a href="shop-grid" class="primary-btn cart-btn">CONTINUE SHOPPING</a>
-                        <a href="#" class="primary-btn cart-btn cart-btn-right"><span class="icon_loading"></span>
-                            Upadate Cart</a>
+                        <a href="shop-grid" class="primary-btn cart-btn">CONTINUE SHOPPING | 쇼핑계속</a>
+                        <!--  
+                        <a href="shopping-cart" class="primary-btn cart-btn cart-btn"><span class="icon_loading"></span>
+                            Update Cart | 업데이트</a>-->
+                        <a href="#" class="primary-btn cart-btn cart-btn-right" onclick="go_cart_delete()">Delete Cart | 삭제하기</a>    
+                            
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="shoping__continue">
+                	<!--
+                    <div class="shoping__continue">       
                         <div class="shoping__discount">
                             <h5>Discount Codes</h5>
                             <form action="#">
                                 <input type="text" placeholder="Enter your coupon code">
                                 <button type="submit" class="site-btn">APPLY COUPON</button>
                             </form>
-                        </div>
+                        </div>                   
                     </div>
+                    -->
                 </div>
                 <div class="col-lg-6">
                     <div class="shoping__checkout">
-                        <h5>Cart Total</h5>
+                        <h5>Cart Total | 장바구니 금액</h5>
                         <ul>
-                            <li>Subtotal <span>$454.98</span></li>
-                            <li>Total <span>$454.98</span></li>
+                            <li>Subtotal | 소계 <span>$454.98</span></li> <!-- ${totalPrice} -->
+                            <li>Total | 총 금액 <span>$454.98</span></li> <!-- ${totalPrice} -->
                         </ul>
-                        <a href="checkout" class="primary-btn">PROCEED TO CHECKOUT</a>
+                        <a href="checkout" class="primary-btn">PROCEED TO CHECKOUT | 결제하기</a>
                     </div>
                 </div>
             </div>

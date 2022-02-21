@@ -6,13 +6,38 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class NoitceController {
 
-   // header.jsp¿¡¼­ notice_list·Î ¹Ş±â
-   // Notice°øÁö»çÇ× ÀüÁ¦¸ñ·Ï º¸±â(notice-È¨ È­¸é)	
+	   // header.jspì—ì„œ notice_listë¡œ ë°›ê¸°
+	   // Noticeê³µì§€ì‚¬í•­ ì „ì œëª©ë¡ ë³´ê¸°(notice-í™ˆ í™”ë©´)
 	@GetMapping(value="/notice_list")
-   public String noticeList() {   // TODO: Model ³Ö¾î¾ß µÊ.
+   public String noticeList() {   // TODO: Model ë„£ì–´ì•¼ ë¨.
       
       return "notice/noticeList";
    }
+
+
+
+/*
+ * Notice details(view) ê²Œì‹œê¸€ ìƒì„¸ë³´ê¸°
+ * noticeList.jspì˜ notice_view?nseq=
+ * nseqë¥¼ NoticeVO ê°ì²´ë¡œ ë°›ìŒ
+ */
+/*
+@GetMapping(value="/notice_view")
+public String notcieView(NotcieVO vo, Model model) {
+		
+		NoticeVO notice = noticeService.getNotice(vo.getNseq());
+		model.addAttribute("noticeVO", notice);
+		
+		return "notice/noticeView"; // jsp
+	}	
 }
+*/
 
+// 	 * Notice details(view) ê²Œì‹œê¸€ ìƒì„¸ë³´ê¸°
+//   * noticeList.jspì˜ notice_view?nseq=
+	@GetMapping(value="/notice_view") 
+	public String notcieView() {
+		return "notice/noticeDetails"; // jsp
+	}
 
+}

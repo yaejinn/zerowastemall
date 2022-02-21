@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="../header.jsp" %>
+<%@ include file="../header.jsp" %> 
+<%-- controller 수정하고 열기
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
+--%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,17 +42,12 @@
                             <span>All departments</span>
                         </div>
                         <ul>
-                            <li><a href="#">Fresh Meat</a></li>
-                            <li><a href="#">Vegetables</a></li>
-                            <li><a href="#">Fruit & Nut Gifts</a></li>
-                            <li><a href="#">Fresh Berries</a></li>
-                            <li><a href="#">Ocean Foods</a></li>
-                            <li><a href="#">Butter & Eggs</a></li>
-                            <li><a href="#">Fastfood</a></li>
-                            <li><a href="#">Fresh Onion</a></li>
-                            <li><a href="#">Papayaya & Crisps</a></li>
-                            <li><a href="#">Oatmeal</a></li>
-                            <li><a href="#">Fresh Bananas</a></li>
+                            <li><a href="#">All</a></li>
+                            <li><a href="category?kind=1">LIVING</a></li>
+                            <li><a href="category?kind=2">KITCHEN</a></li>
+                            <li><a href="category?kind=3">BATHROOM</a></li>
+                            <li><a href="category?kind=4">KIT</a></li>
+                            <li><a href="category?kind=5">ETC</a></li>
                         </ul>
                     </div>
                 </div>
@@ -68,8 +68,8 @@
                                 <i class="fa fa-phone"></i>
                             </div>
                             <div class="hero__search__phone__text">
-                                <h5>+65 11.188.888</h5>
-                                <span>support 24/7 time</span>
+                                <h5>+82 1688.1234</h5>
+                                <span>평일 오전9시-오후6시 </span>
                             </div>
                         </div>
                     </div>
@@ -167,8 +167,9 @@
                         </div>
                     </div>
                 </div>
+               
                 
-                <!-- 세부화면 메인 이미지 / text 시작 -->
+                <!-- 세부화면 메인 이미지 / text 시작  02.21 수정-->
                 <div class="col-lg-8 col-md-7 order-md-1 order-1">
                     <div class="blog__details__text">
                         <img src="img/blog/details/details-pic.jpg" alt="">
@@ -187,102 +188,41 @@
                             the components. The use of materials seeks connection to the main house, the adjacent
                             stables</p>
                     </div>
-                    <div class="blog__details__content">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="blog__details__author">
-                                    <div class="blog__details__author__pic">
-                                        <img src="img/blog/details/details-author.jpg" alt="">
-                                    </div>
-                                    <div class="blog__details__author__text">
-                                        <h6>Michael Scofield</h6>
-                                        <span>Admin</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="blog__details__widget">
-                                    <ul>
-                                        <li><span>Categories:</span> Food</li>
-                                        <li><span>Tags:</span> All, Trending, Cooking, Healthy Food, Life Style</li>
-                                    </ul>
-                                    <div class="blog__details__social">
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                                        <a href="#"><i class="fa fa-envelope"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                 
+                 
+                <!-- ▶ C코드로 수정해보기 -->            
+                <!-- 세부화면 메인 이미지 370px, 270px/ text 시작 C코드로 수정필요-->
+                <!-- 
+                <div class="col-lg-8 col-md-7 order-md-1 order-1">
+                    <div class="blog__details__text">
+                    <c:forEach items="${noticeList}" var="noticeVO">
+                    
+	                    <div class="blog__details__widget">	                       
+	                       <ul>		                   	 		                     
+		                     <li><span>Categories:</span>${noticeVO.nkind}</li>                               
+		                     <li><h3><a href="notice_view?nseq=${noticeVO.nseq}">${noticeVO.subject}</a></h3><li>			                                          		                             	 
+	                    	 <li><span>Notice작성일자:</span> <fmt:formatDate value="${noticeVO.indate}" type="date"/>	 조회수: ${noticeVO.count}</li> 
+	                       </ul>
+                    	</div> 		                	
+                        <img src="img/blog/${noticeVO.image}"/>   
+                        <p>${noticeVO.content}</p> 
+                    </c:forEach>        
+                    </div> 
+                     -->
+       
+                    <!-- 버튼 -->
+			        <div class="row">                   
+			            <div class="col-lg-12 text-center">
+			                <button type="button" class="site-btn" onclick="location.href='notice_list'">목록으로 돌아가기</button> <!--notice목록-->			                        
+			             </div>
+			        </div>	
                 </div>
             </div>
-        </div>
+        </div>  
     </section>
     <!-- Blog Details Section End -->
 
-    <!-- Related Blog Section Begin -->
-    <section class="related-blog spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title related-blog-title">
-                        <h2>Post You May Like</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-6">
-                    <div class="blog__item">
-                        <div class="blog__item__pic">
-                            <img src="img/blog/blog-1.jpg" alt="">
-                        </div>
-                        <div class="blog__item__text">
-                            <ul>
-                                <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-                                <li><i class="fa fa-comment-o"></i> 5</li>
-                            </ul>
-                            <h5><a href="#">Cooking tips make cooking simple</a></h5>
-                            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-6">
-                    <div class="blog__item">
-                        <div class="blog__item__pic">
-                            <img src="img/blog/blog-2.jpg" alt="">
-                        </div>
-                        <div class="blog__item__text">
-                            <ul>
-                                <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-                                <li><i class="fa fa-comment-o"></i> 5</li>
-                            </ul>
-                            <h5><a href="#">6 ways to prepare breakfast for 30</a></h5>
-                            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-6">
-                    <div class="blog__item">
-                        <div class="blog__item__pic">
-                            <img src="img/blog/blog-3.jpg" alt="">
-                        </div>
-                        <div class="blog__item__text">
-                            <ul>
-                                <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-                                <li><i class="fa fa-comment-o"></i> 5</li>
-                            </ul>
-                            <h5><a href="#">Visit the clean farm in the US</a></h5>
-                            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Related Blog Section End -->
+
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -292,6 +232,8 @@
     <script src="js/mixitup.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+    
 <%@ include file="../footer.jsp" %>
+
 </body>
 </html>

@@ -19,23 +19,23 @@ import com.green.biz.order.OrderService;
 @Controller
 public class MypageController {
 /*
- * Àå¹Ù±¸´Ï ´ã±â ¿äÃ» Ã³¸®   
+ * ì¥ë°”êµ¬ë‹ˆ ë‹´ê¸° ìš”ì²­ ì²˜ë¦¬   
  */
    @Autowired
    private CartService cartService;
    @Autowired
    private OrderService orderService;
    
-   @PostMapping(value="/cart_insert") // mypage.jsÀÇ "cart_insert"
-   // productDetail.jspÀÇ quantity, pseq --command°´Ã¼ CartVO ·Î ¹ŞÀ½
+   @PostMapping(value="/cart_insert") // mypage.jsì˜ "cart_insert"
+   // productDetail.jspì˜ quantity, pseq --commandê°ì²´ CartVO ë¡œ ë°›ìŒ
    public String insertCart(CartVO vo, Model model, HttpSession session) {
       
-      // (1) ¼¼¼Ç¿¡ ÀúÀåµÈ »ç¿ëÀÚ Á¤º¸¸¦ ÀĞ¾î ¿Â´Ù.
-      //       MemberControllerÀÇ loginAction -- loginUser
+      // (1) ì„¸ì…˜ì— ì €ì¥ëœ ì‚¬ìš©ì ì •ë³´ë¥¼ ì½ì–´ ì˜¨ë‹¤.
+      //       MemberControllerì˜ loginAction -- loginUser
       MemberVO loginUser = (MemberVO)session.getAttribute("loginUser");
          
-      // (2) ·Î±×ÀÎÀÌ ¾ÈµÇ¾î ÀÖÀ¸¸é ·Î±×ÀÎ, 
-      //          ·Î±×ÀÎÀÌ µÇ¾î ÀÖÀ¸¸é, Àå¹Ù±¸´Ï¿¡ Ç×¸ñ ÀúÀå   
+      // (2) ë¡œê·¸ì¸ì´ ì•ˆë˜ì–´ ìˆìœ¼ë©´ ë¡œê·¸ì¸, 
+      //          ë¡œê·¸ì¸ì´ ë˜ì–´ ìˆìœ¼ë©´, ì¥ë°”êµ¬ë‹ˆì— í•­ëª© ì €ì¥   
       if (loginUser == null) {
          return "member/login";
          
@@ -44,12 +44,12 @@ public class MypageController {
          
          cartService.insertCart(vo);
          
-         // (3) Àå¹Ù±¸´Ï ¸ñ·Ï Á¶È¸ÇÏ¿© È­¸é Ç¥½Ã
+         // (3) ì¥ë°”êµ¬ë‹ˆ ëª©ë¡ ì¡°íšŒí•˜ì—¬ í™”ë©´ í‘œì‹œ
          return "redirect:cart_list";
       }
    }
 /*
- * Àå¹Ù±¸´Ï ¸ñ·Ï Ã³¸®   
+ * ì¥ë°”êµ¬ë‹ˆ ëª©ë¡ ì²˜ë¦¬   
  * cartList.jsp
  */
 //   @GetMapping(value="shoping-cart")
@@ -57,24 +57,24 @@ public class MypageController {
 //      
 ////      MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
 ////      
-////      // ·Î±×ÀÎÀÌ ¾ÈµÇ¾î ÀÖÀ¸¸é ·Î±×ÀÎ ÆäÀÌÁö·Î
+////      // ë¡œê·¸ì¸ì´ ì•ˆë˜ì–´ ìˆìœ¼ë©´ ë¡œê·¸ì¸ í˜ì´ì§€ë¡œ
 ////      if (loginUser == null) {
 ////         return "member/login"; // jsp
 ////      
-////      // ·Î±×ÀÎÀÌ µÇ¾î ÀÖÀ¸¸é, Àå¹Ù±¸´Ï ¸ñ·ÏÀ¸·Î
-////      // cart-mapping.xmlÀÇ  "listCart" - id·Î °¡Á®¿È
+////      // ë¡œê·¸ì¸ì´ ë˜ì–´ ìˆìœ¼ë©´, ì¥ë°”êµ¬ë‹ˆ ëª©ë¡ìœ¼ë¡œ
+////      // cart-mapping.xmlì˜  "listCart" - idë¡œ ê°€ì ¸ì˜´
 ////      } else {
 ////         List<CartVO> cartList = cartService.listCart(loginUser.getId());
 ////         
-////         // ÃÑ¾× °è»ê = ¼ö·® * ÆÇ¸Å°¡
+////         // ì´ì•¡ ê³„ì‚° = ìˆ˜ëŸ‰ * íŒë§¤ê°€
 ////         int totalAmount = 0;
 ////         for (CartVO vo : cartList) {
 ////            totalAmount += vo.getQuantity() * vo.getPrice2();
 ////         }
 ////         
-////         // Àå¹Ù±¸´Ï ¸ñ·Ï°ú À§ÀÇ °è»ê ³»¿ëÀ» ³»Àå°´Ã¼¿¡ ÀúÀå
-////         model.addAttribute("cartList", cartList);   // cartList.jspÀÇ ${cartList}
-////         model.addAttribute("totalPrice", totalAmount); // cartList.jspÀÇ ${totalPrice}
+////         // ì¥ë°”êµ¬ë‹ˆ ëª©ë¡ê³¼ ìœ„ì˜ ê³„ì‚° ë‚´ìš©ì„ ë‚´ì¥ê°ì²´ì— ì €ì¥
+////         model.addAttribute("cartList", cartList);   // cartList.jspì˜ ${cartList}
+////         model.addAttribute("totalPrice", totalAmount); // cartList.jspì˜ ${totalPrice}
 ////         
 //         return "shoping-cart"; // jsp
 //      }
@@ -84,19 +84,19 @@ public class MypageController {
 	   return "shoping-cart";
    }
    /*
-    * Àå¹Ù±¸´Ï Ç×¸ñ »èÁ¦ ¿äÃ» Ã³¸®
+    * ì¥ë°”êµ¬ë‹ˆ í•­ëª© ì‚­ì œ ìš”ì²­ ì²˜ë¦¬
     */
    @PostMapping(value="/cart_delete")
    public String cartDelete(@RequestParam(value="cseq") int[] cseq) {
 	   
 	   for(int i=0; i<cseq.length; i++) {
-		   System.out.println(("»èÁ¦ÇÒ cart seq = " +cseq[i]));
+		   System.out.println(("ì‚­ì œí•  cart seq = " +cseq[i]));
 		   cartService.deleteCart(cseq[i]);
 	   }
 	   return "redirect:cart_list";
    }
    /*
-    * Àå¹Ù±¸´Ï ³»¿ªÀÇ ÁÖ¹® Ã³¸®
+    * ì¥ë°”êµ¬ë‹ˆ ë‚´ì—­ì˜ ì£¼ë¬¸ ì²˜ë¦¬
     */
    @PostMapping(value="/order_insert")
    public String orderInsert(OrderVO vo,HttpSession session,Model model) {
@@ -110,41 +110,41 @@ public class MypageController {
 		   
 		   int oseq = orderService.insertOrder(vo);
 		   
-		   //TODO:ÁÖ¹®¹øÈ£Àü´Ş
+		   //TODO:ì£¼ë¬¸ë²ˆí˜¸ì „ë‹¬
 		   model.addAttribute("oseq",oseq);
 		   
 		   return "redirect:order_list";
 	   }
    }
    /*
-    * ÁøÇàÁßÀÎ ÁÖ¹®³»¿ª Á¶È¸
-    * ÀÔ·Â ÆÄ¶ó¹ÌÅÍ:oseq
+    * ì§„í–‰ì¤‘ì¸ ì£¼ë¬¸ë‚´ì—­ ì¡°íšŒ
+    * ì…ë ¥ íŒŒë¼ë¯¸í„°:oseq
     * 			result = '1'
     */
 //   @GetMapping(value="order_list")
 //   public String orderList(@RequestParam(value="oseq") int oseq,
 //		   					HttpSession session,OrderVO order, Model model) {
-//	   //(1) ·Î±×ÀÎ È®ÀÎ
+//	   //(1) ë¡œê·¸ì¸ í™•ì¸
 //	   MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
 //	   if(loginUser == null) {
 //		   return "member/login";
 //	   }else {
-//	   //(2) ÁÖ¹®¹øÈ£º° ÁøÇàÁßÀÎ ÁÖ¹® ³»¿ª Á¶È¸
+//	   //(2) ì£¼ë¬¸ë²ˆí˜¸ë³„ ì§„í–‰ì¤‘ì¸ ì£¼ë¬¸ ë‚´ì—­ ì¡°íšŒ
 //		   order.setId(loginUser.getId());
 //		   order.setOseq(oseq);
 //		   order.setResult("1");
 //		   List<OrderVO> orderList = orderService.listOrderById(order);
 //		   
-//	   //(3) ÁÖ¹® ÃÑ¾× °è»ê
+//	   //(3) ì£¼ë¬¸ ì´ì•¡ ê³„ì‚°
 //		   int totalAmount = 0;
 //		   for(OrderVO vo : orderList) {
 //			   totalAmount +=(vo.getQuantity() * vo.getPrice2());
 //		   }
-//	   //(4) ³»Àå °´Ã¼¿¡ °á°ú ÀúÀå
+//	   //(4) ë‚´ì¥ ê°ì²´ì— ê²°ê³¼ ì €ì¥
 //		   model.addAttribute("orderList",orderList);
 //		   model.addAttribute("totalPrice",totalAmount);
 //	   
-//	   //(5)È­¸é È£Ãâ
+//	   //(5)í™”ë©´ í˜¸ì¶œ
 //	   return "mypage/orderList";
 //  }
 // }
@@ -157,23 +157,23 @@ public class MypageController {
    @GetMapping(value="/mypage")
    public String myPageView(HttpSession session,Model model) {
 	   
-	   //¼¼¼Ç¿¡ ÀúÀåµÈ ·Î±×ÀÎ Á¤º¸ ÀĞ¾î¿È
+	   //ì„¸ì…˜ì— ì €ì¥ëœ ë¡œê·¸ì¸ ì •ë³´ ì½ì–´ì˜´
 	   MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
 	   
 	   if(loginUser == null){
 		   return "member/login";
 	   }else {
-	   //»ç¿ëÀÚ°¡ ÁÖ¹®ÇÑ ¸ğµç ÁÖ¹®¹øÈ£ Á¶È¸
+	   //ì‚¬ìš©ìê°€ ì£¼ë¬¸í•œ ëª¨ë“  ì£¼ë¬¸ë²ˆí˜¸ ì¡°íšŒ
 	   OrderVO vo = new OrderVO();
 	   vo.setId(loginUser.getId());
 	   vo.setResult("1");
 	   List<Integer> oseqList = orderService.selectSeqOrdering(vo);
 	   
-	   //°¢ ÁÖ¹®¹øÈ£¸¦ Á¶È¸¾Æ¿© ÁÖ¹®¿ä¾àÁ¤º¸ »ı¼º
-	   //(1)ÁÖ¹® ¿ä¾à Á¤º¸ ÀúÀå º¯¼ö
+	   //ê° ì£¼ë¬¸ë²ˆí˜¸ë¥¼ ì¡°íšŒì•„ì—¬ ì£¼ë¬¸ìš”ì•½ì •ë³´ ìƒì„±
+	   //(1)ì£¼ë¬¸ ìš”ì•½ ì •ë³´ ì €ì¥ ë³€ìˆ˜
 	   List<OrderVO> orderList = new ArrayList<OrderVO>();
 	   
-	  //(2)¸ğµç ÁÖºĞ¹øÈ£¿¡ ´ëÇÑ ¿ä¾àÁ¤º¸ »ı¼º
+	  //(2)ëª¨ë“  ì£¼ë¶„ë²ˆí˜¸ì— ëŒ€í•œ ìš”ì•½ì •ë³´ ìƒì„±
 	   for (int oseq : oseqList) {
 		   OrderVO orderVO = new OrderVO();
 		   
@@ -181,21 +181,21 @@ public class MypageController {
 		   orderVO.setOseq(oseq);
 		   orderVO.setResult("1");
 		   
-		   //°¢ ÁÖ¹®¿¡ ´ëÇÑ ÁÖ¹®³»¿ª Á¶È¸
+		   //ê° ì£¼ë¬¸ì— ëŒ€í•œ ì£¼ë¬¸ë‚´ì—­ ì¡°íšŒ
 		   List<OrderVO> listByOseq = orderService.listOrderById(orderVO);
 		   
-		   //À§¿¡¼­ ÁÖ¹®ÇÑ ÁÖ¹®³»¿ªÀÇ ¿ä¾àÁ¤º¸ »ı¼º
+		   //ìœ„ì—ì„œ ì£¼ë¬¸í•œ ì£¼ë¬¸ë‚´ì—­ì˜ ìš”ì•½ì •ë³´ ìƒì„±
 		   OrderVO order  = new OrderVO();
 		   order.setOseq(listByOseq.get(0).getOseq());
 		   order.setIndate(listByOseq.get(0).getIndate());
 		   
 		   if(listByOseq.size() > 1) {
-			   order.setPname(listByOseq.get(0).getPname() + "¿Ü" +
-					   	(listByOseq.size()-1)+"°Ç");
+			   order.setPname(listByOseq.get(0).getPname() + "ì™¸" +
+					   	(listByOseq.size()-1)+"ê±´");
 		   }else {
 			   order.setPname(listByOseq.get(0).getPname());
 		   }
-		   //ÁÖ¹®¹øÈ£º° ÃÑ¾× °è»ê
+		   //ì£¼ë¬¸ë²ˆí˜¸ë³„ ì´ì•¡ ê³„ì‚°
 		   int amount = 0;
 		   for(int i  = 0; i<listByOseq.size();i++) {
 			   amount += listByOseq.get(i).getQuantity()
@@ -203,30 +203,30 @@ public class MypageController {
 		   }
 		   order.setPrice2(amount);
 		   
-		   //¿ä¾àÁ¤º¸¸¦ Listº¯¼ö¿¡ Ãß°¡
+		   //ìš”ì•½ì •ë³´ë¥¼ Listë³€ìˆ˜ì— ì¶”ê°€
 		   orderList.add(order);
 	   }
-	   model.addAttribute("title","ÁøÇàÁßÀÎ ÁÖ¹® ³»¿ª");
+	   model.addAttribute("title","ì§„í–‰ì¤‘ì¸ ì£¼ë¬¸ ë‚´ì—­");
 	   model.addAttribute("orderList",orderList);
 	   }
 	   return "mypage/mypage";
    }
    @GetMapping(value="/order_detail")
    public String orderDetail(OrderVO vo,HttpSession session,Model model) {
-	   //¼¼¼Ç°´Ã¼¿¡¼­ ·Î±×ÀÎ È®ÀÎ
+	   //ì„¸ì…˜ê°ì²´ì—ì„œ ë¡œê·¸ì¸ í™•ì¸
 	   MemberVO loginUser = (MemberVO)session.getAttribute("loginUser");
 	   
 	   if(loginUser == null) {
 		   return "member/login";
 	   }else {
-	   //ÁÖ¹®¹øÈ£¸¦ Á¶°ÇÀ¸·Î ÁÖ¹® Á¶È¸
+	   //ì£¼ë¬¸ë²ˆí˜¸ë¥¼ ì¡°ê±´ìœ¼ë¡œ ì£¼ë¬¸ ì¡°íšŒ
 	   vo.setId(loginUser.getId());
 	   //vo.setResult("1");
 	   vo.setResult("");
 	   
 	   List<OrderVO> orderList = orderService.listOrderById(vo);
-	   //È­¸é¿¡ Ãâ·ÂÇÒ Á¤º¸ »ı¼º
-	   //(1)ÁÖ¹®ÀÚ Á¤º¸ »ı¼º
+	   //í™”ë©´ì— ì¶œë ¥í•  ì •ë³´ ìƒì„±
+	   //(1)ì£¼ë¬¸ì ì •ë³´ ìƒì„±
 	   OrderVO orderDetail = new OrderVO();
 	   
 	   orderDetail.setOseq(orderList.get(0).getOseq());
@@ -234,13 +234,13 @@ public class MypageController {
 	   orderDetail.setMname(orderList.get(0).getMname());
 	   orderDetail.setResult(orderList.get(0).getResult());
 	   
-	   //ÁÖ¹® ÇÕ°è ±İ¾× °è»ê
+	   //ì£¼ë¬¸ í•©ê³„ ê¸ˆì•¡ ê³„ì‚°
 	   int amount = 0;
 	   for(int i = 0;i<orderList.size();i++) {
 		   amount +=(orderList.get(i).getQuantity()
 				   *orderList.get(i).getPrice2());
 	   }
-	   model.addAttribute("title","My Page(ÁÖ¹® »ó¼¼ Á¤º¸)");
+	   model.addAttribute("title","My Page(ì£¼ë¬¸ ìƒì„¸ ì •ë³´)");
 	   model.addAttribute("orderDetail",orderDetail);
 	   model.addAttribute("totalPrice",amount);
 	   model.addAttribute("orderList",orderList);
@@ -250,38 +250,38 @@ public class MypageController {
 	  
    }
    /*
-    * ÃÑ ÁÖ¹®³»¿ª Ã³¸®
-    * Ã³¸®°á°ú¿¡ °ü°è¾øÀÌ »ç¿ëÀÚÀÇ ¸ğµç ÁÖ¹® Á¶È¸
+    * ì´ ì£¼ë¬¸ë‚´ì—­ ì²˜ë¦¬
+    * ì²˜ë¦¬ê²°ê³¼ì— ê´€ê³„ì—†ì´ ì‚¬ìš©ìì˜ ëª¨ë“  ì£¼ë¬¸ ì¡°íšŒ
     */
    @GetMapping(value="order_all")
 	  public String orderAllVieww(OrderVO vo,HttpSession session,Model model) {
-	   //(1)»ç¿ëÀÚ ·Î±×ÀÎ È®ÀÎ
+	   //(1)ì‚¬ìš©ì ë¡œê·¸ì¸ í™•ì¸
 	   MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
 	   
 	   if(loginUser == null){
 		   return "member/login";
 	   }else {		   
-		   //(2)»ç¿ëÀÚÀÇ ÀüÃ¼ ÁÖ¹®¹øÈ£ È®ÀÎ
+		   //(2)ì‚¬ìš©ìì˜ ì „ì²´ ì£¼ë¬¸ë²ˆí˜¸ í™•ì¸
 		   vo.setId(loginUser.getId());
-		   vo.setResult("");//Ã³¸®°á°ú ÁöÁ¤ ¾ÈÇÔ
+		   vo.setResult("");//ì²˜ë¦¬ê²°ê³¼ ì§€ì • ì•ˆí•¨
 		   List<Integer> oseqList = orderService.selectSeqOrdering(vo);
 		   
-		   //(3)°¢ ÁÖ¹®¹øÈ£ º° ÁÖ¹®³»¿ª Á¶È¸
-		   List<OrderVO> orderList = new ArrayList<>(); //ÁÖ¹®¿ä¾àÁ¤º¸ ÀúÀå º¯¼ö
+		   //(3)ê° ì£¼ë¬¸ë²ˆí˜¸ ë³„ ì£¼ë¬¸ë‚´ì—­ ì¡°íšŒ
+		   List<OrderVO> orderList = new ArrayList<>(); //ì£¼ë¬¸ìš”ì•½ì •ë³´ ì €ì¥ ë³€ìˆ˜
 		   for(int oseq : oseqList) {
 			   OrderVO orderVO = new OrderVO();
 			   orderVO.setId(loginUser.getId());
 			   orderVO.setOseq(oseq);
 			   orderVO.setResult("");
 			   
-			   //ÁÖ¹®¹øÈ£º° ÁÖ¹®³»¿ª Á¶È¸
+			   //ì£¼ë¬¸ë²ˆí˜¸ë³„ ì£¼ë¬¸ë‚´ì—­ ì¡°íšŒ
 			   List<OrderVO> orders = orderService.listOrderById(orderVO);
 		   
-			 //(4)ÁÖ¹®¿ä¾à Á¤º¸ »ı¼º
+			 //(4)ì£¼ë¬¸ìš”ì•½ ì •ë³´ ìƒì„±
 			 OrderVO summary = new OrderVO();
-			 summary = orders.get(0); //¿ì¼± Ã¹¹øÂ° »óÇ°³»¿ª Á¤º¸¸¦ º¹»ç
+			 summary = orders.get(0); //ìš°ì„  ì²«ë²ˆì§¸ ìƒí’ˆë‚´ì—­ ì •ë³´ë¥¼ ë³µì‚¬
 			 if(orders.size()>1) {
-				 summary.setPname(orders.get(0).getPname()+"¿Ü"+(orders.size()-1+"°Ç"));
+				 summary.setPname(orders.get(0).getPname()+"ì™¸"+(orders.size()-1+"ê±´"));
 			 }else {
 				 summary.setPname(orders.get(0).getPname());
 			 }
@@ -294,12 +294,16 @@ public class MypageController {
 			 orderList.add(summary);
 		   }
 		   
-		   //°á°ú¸¦ È­¸é¿¡ Àü´Ş
-		   model.addAttribute("title","ÃÑ ÁÖ¹®³»¿ª");
+		   //ê²°ê³¼ë¥¼ í™”ë©´ì— ì „ë‹¬
+		   model.addAttribute("title","ì´ ì£¼ë¬¸ë‚´ì—­");
 		   model.addAttribute("orderList",orderList);
 		   
 		   return "mypage/mypage";
   }
  }
 }
+
+
+
+
 

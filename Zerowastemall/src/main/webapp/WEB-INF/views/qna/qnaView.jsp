@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title> Q&A 게시글번호로 상세조회하는 페이지 </title>
+<title> Q&A 게시글번호로 상세조회 </title>
 
 	<meta charset="UTF-8">
     <meta name="description" content="Ogani Template">
@@ -34,37 +34,34 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
     rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
  
- <style>
- <!-- 표 부분 -->
-table#notice {
-	width: 670px;
-	border-collapse: collapse;
-	border-top: 1px solid #999;
+<style>
+
+
+.bordertable th{
+  background-color: #f7f8fa; 
+  text-align: center;
 }
 
-table#notice th {
-	height: 20px;
-	width: 70px;
-	font-size: 14px; 
-	font-weight: bold;
-	padding: 5px; 
-	color: #FFF;
-	border-bottom: 1px dotted #999;
+.bordertable td{
+  padding-left:20px !important;
+}  
+
+.bordertable th, .bordertable td{
+  font-family: '맑은고딕', '나눔고딕', NanumGothic,;
+  font-size: 12px;    
+  border:1px solid #ededed !important;
+  font-weight: normal;      
+  line-height: 19px;
+  color:#20232;
+  padding-top: 9px !important;
+  padding-bottom: 7px !important;
 }
 
-table#notice td {
-	text-align: left;
-	padding: 6px 0;
-	border-bottom: 1px dotted #999;
-}
 
-table#notice tr:hover {
-	background-color: #DDF;
-	cursor: pointer;
-	color: red;
-} 
- </style>
-    
+
+
+
+</style>
 </head>
 <body>
  <!-- Hero Section Begin -->
@@ -78,17 +75,12 @@ table#notice tr:hover {
                             <span>All departments</span>
                         </div>
                         <ul>
-                            <li><a href="#">Fresh Meat</a></li>
-                            <li><a href="#">Vegetables</a></li>
-                            <li><a href="#">Fruit & Nut Gifts</a></li>
-                            <li><a href="#">Fresh Berries</a></li>
-                            <li><a href="#">Ocean Foods</a></li>
-                            <li><a href="#">Butter & Eggs</a></li>
-                            <li><a href="#">Fastfood</a></li>
-                            <li><a href="#">Fresh Onion</a></li>
-                            <li><a href="#">Papayaya & Crisps</a></li>
-                            <li><a href="#">Oatmeal</a></li>
-                            <li><a href="#">Fresh Bananas</a></li>
+                            <li><a href="#">All</a></li>
+                            <li><a href="category?kind=1">LIVING</a></li>
+                            <li><a href="category?kind=2">KITCHEN</a></li>
+                            <li><a href="category?kind=3">BATHROOM</a></li>
+                            <li><a href="category?kind=4">KIT</a></li>
+                            <li><a href="category?kind=5">ETC</a></li>
                         </ul>
                     </div>
                 </div>
@@ -109,8 +101,8 @@ table#notice tr:hover {
                                 <i class="fa fa-phone"></i>
                             </div>
                             <div class="hero__search__phone__text">
-                                <h5>+65 11.188.888</h5>
-                                <span>support 24/7 time</span>
+                                <h5>+82 1688.1234</h5>
+                                <span>평일 오전9시-오후6시 </span>
                             </div>
                         </div>
                     </div>
@@ -206,30 +198,57 @@ table#notice tr:hover {
                 </div>
             </div>
             <br><br>
-            <form name="formm" method="post"> <!-- action없어도되나 ?-->
+            
+            <form name="formm" method="post" action="post"> <!-- action없어도되나 ?-->
                 <!-- 부트스트랩 테이블 -->
-                <table class="table table-hover" id="notice">
-				  <thead class="table-light">
+                <table class="table table-bordered" id="content_table">
 				    <tr>
-				      <th scope="col"><img src="img/qna/qnaview_icon.png"><b>제목</b></th>
+				      <th><img src="img/qna/qnaview_icon.png"><b>제목</b></th>				   
+				      <td>환불문의</td>
+				    </tr> 
+				      
+				    <tr>
+					   <th><img src="img/qna/qnaview_icon.png"><b>등록일</b></th>
+					   <td>2021-12-01</td>
+				    </tr> 
+				    
+				    <tr>
+				       <th><img src="img/qna/qnaview_icon.png"><b>질문내용</b></th>
+				       <td>환불문의 드립니다. 주문했는데 상품을 잘못 주문했습니다.<br>
+				        	환불 또는 취소 가능한지 여부 확인 부탁드립니다.</td>
+				    </tr>
+				    <tr>
+				       <th><img src="img/qna/qnaview_icon.png"><b>답변 내용</b></th>
+				       <td></td> <!--미답변 --> 
+				    </tr>
+				</table>
+				<br><br><br>
+                
+                <!-- #중요# 막아둠, 지우지말것 -->
+                <!-- 부트스트랩 테이블 -->
+                <!--   나중에 Controller수정시 위에꺼 tr묶음 삭제하고 열기,
+                <table class="table table-bordered" id="content_table">
+				    <tr>
+				      <th><img src="img/qna/qnaview_icon.png"><b>제목</b></th>
 				      <td>${qnaVO.subject}</td>
 				    </tr> 
 				      
 				    <tr>
-				      <th scope="col"><img src="img/qna/qnaview_icon.png"><b>등록일</b></th>
-				    <!--   <td><fmt:formatDate value="${qnaVO.indate}" type="date"/></td>  -->
+				      <th><img src="img/qna/qnaview_icon.png"><b>등록일</b></th>
+				      <td><fmt:formatDate value="${qnaVO.indate}" type="date"/></td>  
 				    </tr> 
 				    
 				    <tr>
 				    	<th><img src="img/qna/qnaview_icon.png"><b>질문내용</b></th>
-				        <td>${qnaVO.content} 
+				        <td>${qnaVO.content}</td>
 				    </tr>
 				    <tr>
 				        <th><img src="img/qna/qnaview_icon.png"><b>답변 내용</b></th>
-				        <td>${qnaVO.reply}  
+				        <td>${qnaVO.reply}</td>  
 				    </tr>
 				</table>
-				<br><br><br>
+				<br><br><br>				
+				-->
         
                 <!-- 버튼 -->
                 <div class="row">                   

@@ -1,21 +1,21 @@
 package com.green.biz.dto;
 
 import java.sql.Timestamp;
-
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-
 @Getter
 @Setter
 @ToString
 public class CartVO {
-	private int cseq;		 //Àå¹Ù±¸´Ï ÀÏ·Ã¹øÈ£
-	private String id;		 //È¸¿øid
-	private int pseq;		 //»óÇ° ÀÏ·Ã¹øÈ£
-	private String mname;	 //È¸¿ø¸í
-	private String pname;	 //»óÇ°¸í
-	private int quantity;	 //¼ö·®
-	private int price2;		 //ÆÇ¸Å°¡
-	private Timestamp indate;//µî·ÏÀÏ
+
+	private int cseq;  		// ì¥ë°”êµ¬ë‹ˆ ì¼ë ¨ë²ˆí˜¸
+	private String id;		// íšŒì› ID --  (memberí…Œì´ë¸” ë™ì¼)
+	private int pseq;		// ìƒí’ˆë²ˆí˜¸ (productí…Œì´ë¸” ë™ì¼)
+	private String mname;	// íšŒì›ëª…
+	private String pname;	// ìƒí’ˆëª…
+	private int quantity;	// ìˆ˜ëŸ‰
+	private int price2;		// íŒë§¤ê°€
+	private Timestamp indate;	// ë“±ë¡ì¼
+
 }

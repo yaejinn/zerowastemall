@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class AboutusController {
 	
-	// header.jsp¿¡¼­ aboutus·Î ¹Ş±â(´ÜÀÏ ÆäÀÌÁö)
-	// About us ÆäÀÌÁö È£Ãâ¿ë --- ´Ù¸¥ ±â´É ¾øÀ½
+	// header.jspì—ì„œ aboutusë¡œ ë°›ê¸°(ë‹¨ì¼ í˜ì´ì§€)
+	// About us í˜ì´ì§€ í˜¸ì¶œìš© --- ë‹¤ë¥¸ ê¸°ëŠ¥ ì—†ìŒ
 	@GetMapping(value="/aboutus")
-	public String aboutus() { // TODO: Model ³Ö¾î¾ß µÊ.
+	public String aboutus() { // TODO: Model ë„£ì–´ì•¼ ë¨.
 		
 		return "aboutus/aboutus";
 	}
