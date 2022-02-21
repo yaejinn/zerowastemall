@@ -4,10 +4,16 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
  <configuration>
  	<typeAliases>
- 		<typeAlias type="com.green.biz.dto.ProductVO" alias="product"/>
+ 		<typeAlias type="com.green.biz.dto.ProductVO" alias="product" />
  		<typeAlias type="com.green.biz.dto.CartVO" alias="cart" />
  		<typeAlias type="com.green.biz.dto.OrderVO" alias="order" />
+ 		<typeAlias type="com.green.biz.dto.QnaVO" alias="qna" />
+ 		<typeAlias type="com.green.biz.dto.NoticeVO" alias="notice" />
+ 		
+ 		<!--
+ 		<typeAlias type="com.green.biz.dto.WorkerVO" alias="worker"/>
   		<typeAlias type="com.green.biz.dto.MemberVO" alias="member"/>
+  		-->
  		
  	</typeAliases>
  	
@@ -17,12 +23,13 @@
  		<mapper resource="mappings/product-mapping.xml"/>
  		<mapper resource="mappings/cart-mapping.xml"/>
  		<mapper resource="mappings/order-mapping.xml"/>
-		<mapper resource="mappings/member-mapping.xml"/>
-		
-		
-<!--  				<mapper resource="mappings/qna-mapping.xml"/>
-		<mapper resource="mappings/admin-mapping.xml"/>  -->
- 	</mappers>
- 	
- 	
+ 		<mapper resource="mappings/qna-mapping.xml"/>
+ 		<mapper resource="mappings/notice-mapping.xml"/>
+ 		
+ 		<!-- 
+ 	 	<mapper resource="mappings/member-mapping.xml"/>						
+		<mapper resource="mappings/admin-mapping.xml"/>  
+		-->
+ 	</mappers>	
  </configuration>
+ 
