@@ -9,7 +9,7 @@
     <meta name="keywords" content="Ogani, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ogani | Template</title>
+    <title> Notice - 상세보기</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
@@ -85,11 +85,11 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="blog__details__hero__text">
-                        <h2>The Moment You Need To Remove Garlic From The Menu</h2>
+                        <h2>Notice | 게시글 확인</h2>
                         <ul>
-                            <li>By Michael Scofield</li>
-                            <li>January 14, 2019</li>
-                            <li>8 Comments</li>
+                            <li><a href="index">Home 홈</a></li>
+                            <li><a href="notice_list">list 목록</a></li>
+                            <li><a href="shop-grid">shopping 쇼핑</a></li>
                         </ul>
                     </div>
                 </div>
@@ -109,62 +109,66 @@
                                 <input type="text" placeholder="Search...">
                                 <button type="submit"><span class="icon_search"></span></button>
                             </form>
-                        </div>
-                        <div class="blog__sidebar__item">
-                            <h4>Categories</h4>
+                            </div>
+							<div class="blog__sidebar__item">
+                            <h4>Categories | 카테고리</h4>
                             <ul>
                                 <li><a href="#">All</a></li>
-                                <li><a href="#">Beauty (20)</a></li>
-                                <li><a href="#">Food (5)</a></li>
-                                <li><a href="#">Life Style (9)</a></li>
-                                <li><a href="#">Travel (10)</a></li>
+                                <li><a href="#">Notice | 일반 공지</a></li>
+                                <li><a href="#">Shipping | 배송</a></li>
+                                <li><a href="#">Events | 이벤트</a></li>
+                                <li><a href="#">Etc | 기타</a></li>
                             </ul>
                         </div>
+                        <!-- 제로웨이스트 관련 뉴스 url만 연결, 이미지는 수정필요 -->
                         <div class="blog__sidebar__item">
-                            <h4>Recent News</h4>
+                            <h4>Recent News | 새 소식</h4>
                             <div class="blog__sidebar__recent">
-                                <a href="#" class="blog__sidebar__recent__item">
+                            
+                                <a href="https://www.jungle.co.kr/magazine/203655" target="_blank" class="blog__sidebar__recent__item">
                                     <div class="blog__sidebar__recent__item__pic">
-                                        <img src="img/blog/sidebar/sr-1.jpg" alt="">
+                                    	<img src="img/blog/sidebar/sr-1.jpg" alt="">                                     
                                     </div>
                                     <div class="blog__sidebar__recent__item__text">
-                                        <h6>09 Kinds Of Vegetables<br /> Protect The Liver</h6>
-                                        <span>MAR 05, 2019</span>
+                                    	<h6>Heniken Korea<br />zerowaste challenge</h6>
+                                        <span>2021-12-02</span>
                                     </div>
                                 </a>
-                                <a href="#" class="blog__sidebar__recent__item">
+                                <a href="https://www.sedaily.com/NewsView/22VELZCEP3" target="_blank" class="blog__sidebar__recent__item">
                                     <div class="blog__sidebar__recent__item__pic">
-                                        <img src="img/blog/sidebar/sr-2.jpg" alt="">
+                                        <img src="img/blog/sidebar/sr-2.jpg" alt="">  
                                     </div>
                                     <div class="blog__sidebar__recent__item__text">
-                                        <h6>Tips You To Balance<br /> Nutrition Meal Day</h6>
-                                        <span>MAR 05, 2019</span>
+                                        <h6>LG Health & Beuty<br /> zerowaste challenge</h6>
+                                        <span>2021-12-23</span>
                                     </div>
                                 </a>
-                                <a href="#" class="blog__sidebar__recent__item">
+                                <a href="http://www.ezyeconomy.com/news/articleView.html?idxno=116218" target="_blank" class="blog__sidebar__recent__item">
                                     <div class="blog__sidebar__recent__item__pic">
-                                        <img src="img/blog/sidebar/sr-3.jpg" alt="">
+                                        <img src="img/blog/sidebar/sr-3.jpg" alt=""> 
                                     </div>
                                     <div class="blog__sidebar__recent__item__text">
-                                        <h6>4 Principles Help You Lose <br />Weight With Vegetables</h6>
-                                        <span>MAR 05, 2019</span>
+                                        <h6>Cheiljemyunso<br />zerowaste challenge</h6>
+                                        <span>2022-02-08</span>
                                     </div>
                                 </a>
                             </div>
                         </div>
                         <div class="blog__sidebar__item">
-                            <h4>Search By</h4>
+                            <h4>Search By | 검색 키워드</h4>
                             <div class="blog__sidebar__item__tags">
-                                <a href="#">Apple</a>
-                                <a href="#">Beauty</a>
-                                <a href="#">Vegetables</a>
-                                <a href="#">Fruit</a>
-                                <a href="#">Healthy Food</a>
-                                <a href="#">Lifestyle</a>
+                                <a href="#">배송</a>
+                                <a href="#">휴일</a>
+                                <a href="#">공지사항</a>
+                                <a href="#">계좌</a>
+                                <a href="#">환불</a>
+                                <a href="#">교환</a>
                             </div>
                         </div>
                     </div>
                 </div>
+                
+                <!-- 세부화면 메인 이미지 / text 시작 -->
                 <div class="col-lg-8 col-md-7 order-md-1 order-1">
                     <div class="blog__details__text">
                         <img src="img/blog/details/details-pic.jpg" alt="">

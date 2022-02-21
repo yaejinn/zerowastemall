@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %> 
+<%-- controller 수정하고 열기
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
+--%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +14,7 @@
     <meta name="keywords" content="Ogani, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ogani | Template</title>
+    <title>Notcie-목록보기</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
@@ -23,7 +28,6 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-<title>Insert title here</title>
 </head>
 <body>
 <!-- Hero Section Begin -->
@@ -85,10 +89,10 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
-                        <h2>Blog</h2>
+                        <h2>Notice</h2>
                         <div class="breadcrumb__option">
                             <a href="index">Home</a>
-                            <span>Blog</span>
+                            <span>공지사항</span>
                         </div>
                     </div>
                 </div>
@@ -96,8 +100,8 @@
         </div>
     </section>
     <!-- Breadcrumb Section End -->
-
-    <!-- Blog Section Begin -->
+    
+	<!-- Blog Section Begin -->
     <section class="blog spad">
         <div class="container">
             <div class="row">
@@ -105,67 +109,70 @@
                     <div class="blog__sidebar">
                         <div class="blog__sidebar__search">
                             <form action="#">
-                                <input type="text" placeholder="Search...">
+                                <input type="text" placeholder="Search | 검색하기...">
                                 <button type="submit"><span class="icon_search"></span></button>
                             </form>
                         </div>
                         <div class="blog__sidebar__item">
-                            <h4>Categories</h4>
+                            <h4>Categories | 카테고리</h4>
                             <ul>
                                 <li><a href="#">All</a></li>
-                                <li><a href="#">Beauty (20)</a></li>
-                                <li><a href="#">Food (5)</a></li>
-                                <li><a href="#">Life Style (9)</a></li>
-                                <li><a href="#">Travel (10)</a></li>
+                                <li><a href="#">Notice | 일반 공지</a></li>
+                                <li><a href="#">Shipping | 배송</a></li>
+                                <li><a href="#">Events | 이벤트</a></li>
+                                <li><a href="#">Etc | 기타</a></li>
                             </ul>
                         </div>
+                        <!-- 제로웨이스트 관련 뉴스 url만 연결, 이미지는 수정필요 -->
                         <div class="blog__sidebar__item">
-                            <h4>Recent News</h4>
+                            <h4>Recent News | 새 소식</h4>
                             <div class="blog__sidebar__recent">
-                                <a href="#" class="blog__sidebar__recent__item">
+                            
+                                <a href="https://www.jungle.co.kr/magazine/203655" target="_blank" class="blog__sidebar__recent__item">
                                     <div class="blog__sidebar__recent__item__pic">
-                                        <img src="img/blog/sidebar/sr-1.jpg" alt="">
+                                    	<img src="img/blog/sidebar/sr-1.jpg" alt="">                                     
                                     </div>
                                     <div class="blog__sidebar__recent__item__text">
-                                        <h6>09 Kinds Of Vegetables<br /> Protect The Liver</h6>
-                                        <span>MAR 05, 2019</span>
+                                    	<h6>Heniken Korea<br />zerowaste challenge</h6>
+                                        <span>2021-12-02</span>
                                     </div>
                                 </a>
-                                <a href="#" class="blog__sidebar__recent__item">
+                                <a href="https://www.sedaily.com/NewsView/22VELZCEP3" target="_blank" class="blog__sidebar__recent__item">
                                     <div class="blog__sidebar__recent__item__pic">
-                                        <img src="img/blog/sidebar/sr-2.jpg" alt="">
+                                        <img src="img/blog/sidebar/sr-2.jpg" alt="">  
                                     </div>
                                     <div class="blog__sidebar__recent__item__text">
-                                        <h6>Tips You To Balance<br /> Nutrition Meal Day</h6>
-                                        <span>MAR 05, 2019</span>
+                                        <h6>LG Health & Beuty<br /> zerowaste challenge</h6>
+                                        <span>2021-12-23</span>
                                     </div>
                                 </a>
-                                <a href="#" class="blog__sidebar__recent__item">
+                                <a href="http://www.ezyeconomy.com/news/articleView.html?idxno=116218" target="_blank" class="blog__sidebar__recent__item">
                                     <div class="blog__sidebar__recent__item__pic">
-                                        <img src="img/blog/sidebar/sr-3.jpg" alt="">
+                                        <img src="img/blog/sidebar/sr-3.jpg" alt=""> 
                                     </div>
                                     <div class="blog__sidebar__recent__item__text">
-                                        <h6>4 Principles Help You Lose <br />Weight With Vegetables</h6>
-                                        <span>MAR 05, 2019</span>
+                                        <h6>Cheiljemyunso<br />zerowaste challenge</h6>
+                                        <span>2022-02-08</span>
                                     </div>
                                 </a>
                             </div>
                         </div>
                         <div class="blog__sidebar__item">
-                            <h4>Search By</h4>
+                            <h4>Search By | 검색 키워드</h4>
                             <div class="blog__sidebar__item__tags">
-                                <a href="#">Apple</a>
-                                <a href="#">Beauty</a>
-                                <a href="#">Vegetables</a>
-                                <a href="#">Fruit</a>
-                                <a href="#">Healthy Food</a>
-                                <a href="#">Lifestyle</a>
+                                <a href="#">배송</a>
+                                <a href="#">휴일</a>
+                                <a href="#">공지사항</a>
+                                <a href="#">계좌</a>
+                                <a href="#">환불</a>
+                                <a href="#">교환</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-7">
                     <div class="row">
+                    
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="blog__item">
                                 <div class="blog__item__pic">
@@ -183,23 +190,33 @@
                                 </div>
                             </div>
                         </div>
+                                                
+                        
+                        <!-- ▶ C코드로 수정해보기 -->
+                        <!-- 공지사사항용 이미지 삽입(크기 조정필요) width: 370px, height: 265px -->
+                        <!-- 성공시 상세보기 화면 noticeDetails.jsp 이동가능  -->
+                        <!--  
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="blog__item">
+                            <c:forEach items="${noticeList}" var="noticeVO"> 
                                 <div class="blog__item__pic">
-                                    <img src="img/blog/blog-3.jpg" alt="">
+                                    <img src="img/blog/${noticeVO.image}"/>
                                 </div>
+                                
                                 <div class="blog__item__text">
                                     <ul>
-                                        <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-                                        <li><i class="fa fa-comment-o"></i> 5</li>
+                                        <li><i class="fa fa-calendar-o"></i><fmt:formatDate value="${noticeVO.indate}" type="date"/></li>
+                                        <li><i class="fa fa-comment-o"></i>{noticeVO.count}</li>
                                     </ul>
-                                    <h5><a href="#">Visit the clean farm in the US</a></h5>
-                                    <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam
-                                        quaerat </p>
-                                    <a href="#" class="blog__btn">READ MORE <span class="arrow_right"></span></a>
+                                    <h5><a href="notice_view?nseq=${noticeVO.nseq}">${noticeVO.subject}</a></h5>
+                                    <p>${noticeVO.content}</p>
+                                    <a href="notice_view?nseq=${noticeVO.nseq}" class="blog__btn">상세보기 <span class="arrow_right"></span></a>
                                 </div>
+                              </c:forEach>  
                             </div>
                         </div>
+                        -->
+                        
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="blog__item">
                                 <div class="blog__item__pic">
@@ -217,6 +234,9 @@
                                 </div>
                             </div>
                         </div>
+                        
+                        
+                        
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="blog__item">
                                 <div class="blog__item__pic">
@@ -281,7 +301,10 @@
             </div>
         </div>
     </section>
+
+
     <!-- Blog Section End -->
+    
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

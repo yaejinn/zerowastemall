@@ -77,13 +77,13 @@
                             <li><a href="mypage/mypage">MYPAGE</a>
                                 
                             </li>
-                            <li><a href="NOTICE">NOTICE</a>
-                                <ul class="header__menu__dropdown">
-                                    <li><a href="LOGIN">LOGIN</a></li>
-                                    
-                                </ul>
+                            <li><a href="#">NOTICE</a>
+                            	<ul class="header__menu__dropdown">
+	                            	<li><a href="notice_list">NOTICE</a></li>
+	                            	<li><a href="aboutus">ABOUT US</a></li>                           	
+                            	</ul>
                             </li>
-                            <li><a href="Q&A">Q&amp;A(1:1)</a></li>
+                            <li><a href="qna_list">Q&amp;A(1:1)</a></li>
                         </ul>
                     </nav>
                 </div>
