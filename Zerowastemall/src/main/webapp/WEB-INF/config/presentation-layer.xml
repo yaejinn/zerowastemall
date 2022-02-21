@@ -23,6 +23,9 @@
 	<mvc:resources location="/WEB-INF/views/product/" mapping="/product/**"></mvc:resources>
 	<mvc:resources location="/WEB-INF/views/admin/" mapping="/admin/**"></mvc:resources>
 	
+	<!-- 리소스 김소연추가 02/19 -->
+	<mvc:resources location="/WEB-INF/views/aboutus/" mapping="/aboutus/**"></mvc:resources>
+	
 	<!-- jsp소스 viewResolver -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/views/"></property>
